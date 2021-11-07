@@ -1,4 +1,4 @@
-package com.wjd.javacourse;
+package com.wjd.javacourse.week01;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,13 +37,8 @@ public class HelloClassLoader extends ClassLoader{
     public static void main(String[] args) throws Exception {
         ClassLoader classLoader = new HelloClassLoader();
         Class<?> klass = classLoader.loadClass("Hello");
-        for (Method method: klass.getDeclaredMethods()) {
-            System.out.println(method);
-        }
-
         Object obj = klass.getDeclaredConstructor().newInstance();
         Method method = klass.getMethod("hello");
         method.invoke(obj);
-
     }
 }
