@@ -21,6 +21,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <spring-version>4.3.29.RELEASE</spring-version>
     </properties>
     <dependencies>
         <dependency>
@@ -66,6 +67,17 @@
         <dependency>
             <groupId>com.wjd</groupId>
             <artifactId>SchoolStartar</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
         </dependency>
     </dependencies>
 
