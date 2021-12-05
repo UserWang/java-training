@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=
+com.wjd.javacourse.week05.SchoolAutoConfig
