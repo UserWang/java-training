@@ -1,6 +1,5 @@
 
 
-# 用户登陆表
 CREATE TABLE customer_login(
                                customer_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '用户ID',
                                login_name VARCHAR(20) NOT NULL COMMENT '用户登录名',
@@ -11,7 +10,7 @@ CREATE TABLE customer_login(
                                PRIMARY KEY pk_customerid(customer_id)
 ) ENGINE = innodb COMMENT '用户登录表'
 
-用户信息表
+
 CREATE TABLE customer_info(
                               customer_info_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
                               customer_id INT UNSIGNED NOT NULL COMMENT 'customer_login表的自增ID',
