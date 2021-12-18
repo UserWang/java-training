@@ -9,9 +9,9 @@ CREATE TABLE customer_login(
                                insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                                update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
                                PRIMARY KEY pk_customerid(customer_id)
-) ENGINE = innodb COMMENT '用户登录表'
+) ENGINE = innodb COMMENT '用户登录表';
 
-用户信息表
+# 用户信息表
 CREATE TABLE customer_info(
                               customer_info_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
                               customer_id INT UNSIGNED NOT NULL COMMENT 'customer_login表的自增ID',

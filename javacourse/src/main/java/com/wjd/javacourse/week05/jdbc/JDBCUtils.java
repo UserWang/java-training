@@ -19,7 +19,7 @@ public class JDBCUtils {
     static{
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream(new File("jdbc.properties")));
+            properties.load(new FileInputStream(new File("src/main/resources/jdbc.properties")));
             driverName = properties.getProperty("driver");
             url = properties.getProperty("url");
             user = properties.getProperty("user");
