@@ -1,6 +1,5 @@
 
 
-# 用户登陆表
 CREATE TABLE customer_login(
                                customer_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '用户ID',
                                login_name VARCHAR(20) NOT NULL COMMENT '用户登录名',
@@ -18,14 +17,14 @@ CREATE TABLE customer_info(
                               customer_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
                               identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
                               identity_card_no VARCHAR(20) COMMENT '证件号码',
-                              mobile_phone VARCHAR(20) UNSIGNED COMMENT '手机号',
+                              mobile_phone VARCHAR(20)  COMMENT '手机号',
                               customer_email VARCHAR(50) COMMENT '邮箱',
                               gender CHAR(1) COMMENT '性别',
                               register_time TIMESTAMP NOT NULL COMMENT '注册时间',
                               user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
                               insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                               update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                              PRIMARY KEY pk_customerinfid(customer_inf_id)
+                              PRIMARY KEY pk_customerinfid(customer_info_id)
 ) ENGINE = innodb COMMENT '用户信息表';
 
 CREATE TABLE customer_address(
