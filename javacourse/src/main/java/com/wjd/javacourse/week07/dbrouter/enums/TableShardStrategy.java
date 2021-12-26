@@ -3,7 +3,7 @@ package com.wjd.javacourse.week07.dbrouter.enums;
 
 public enum TableShardStrategy {
 
-    UIDSN(TableShardDisposeType.MutiParamMutiTail.getCode(),"uid", "sn", new String[]{"other_biz_extend","other_biz_orders"});
+    UID(TableShardDisposeType.SingleParamMutiTail.getCode(),"uid",  new String[]{"customer_info","order"});
 
     // 分表计算方式
     private int strategy;

@@ -1,35 +1,106 @@
 
-
-CREATE TABLE customer_login(
-                               customer_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '用户ID',
-                               login_name VARCHAR(20) NOT NULL COMMENT '用户登录名',
-                               password CHAR(32) NOT NULL COMMENT 'md5加密的密码',
-                               user_stats TINYINT NOT NULL DEFAULT 1 COMMENT '用户状态',
-                               insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
-                               update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                               PRIMARY KEY pk_customerid(customer_id)
-) ENGINE = innodb COMMENT '用户登录表';
-
 # 用户信息表
-CREATE TABLE customer_info(
-                              customer_info_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
-                              customer_id INT UNSIGNED NOT NULL COMMENT 'customer_login表的自增ID',
-                              customer_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
+CREATE TABLE user_info_01(
+                              id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                              uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                              user_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
                               identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
                               identity_card_no VARCHAR(20) COMMENT '证件号码',
-                              mobile_phone VARCHAR(20)  COMMENT '手机号',
-                              customer_email VARCHAR(50) COMMENT '邮箱',
+                              phone VARCHAR(20)  COMMENT '手机号',
+                              email VARCHAR(50) COMMENT '邮箱',
                               gender CHAR(1) COMMENT '性别',
                               register_time TIMESTAMP NOT NULL COMMENT '注册时间',
                               user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
                               insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                               update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                              PRIMARY KEY pk_customerinfid(customer_info_id)
+                              PRIMARY KEY pk_customerinfid(id)
+) ENGINE = innodb COMMENT '用户信息表';
+
+# 用户信息表
+CREATE TABLE user_info_02(
+                             id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                             uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                             user_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
+                             identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
+                             identity_card_no VARCHAR(20) COMMENT '证件号码',
+                             phone VARCHAR(20)  COMMENT '手机号',
+                             email VARCHAR(50) COMMENT '邮箱',
+                             gender CHAR(1) COMMENT '性别',
+                             register_time TIMESTAMP NOT NULL COMMENT '注册时间',
+                             user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
+                             insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
+                             update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+                             PRIMARY KEY pk_customerinfid(id)
+) ENGINE = innodb COMMENT '用户信息表';
+
+# 用户信息表
+CREATE TABLE user_info_03(
+                             id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                             uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                             user_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
+                             identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
+                             identity_card_no VARCHAR(20) COMMENT '证件号码',
+                             phone VARCHAR(20)  COMMENT '手机号',
+                             email VARCHAR(50) COMMENT '邮箱',
+                             gender CHAR(1) COMMENT '性别',
+                             register_time TIMESTAMP NOT NULL COMMENT '注册时间',
+                             user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
+                             insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
+                             update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+                             PRIMARY KEY pk_customerinfid(id)
+) ENGINE = innodb COMMENT '用户信息表';
+
+# 用户信息表
+CREATE TABLE user_info_04(
+                             id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                             uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                             user_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
+                             identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
+                             identity_card_no VARCHAR(20) COMMENT '证件号码',
+                             phone VARCHAR(20)  COMMENT '手机号',
+                             email VARCHAR(50) COMMENT '邮箱',
+                             gender CHAR(1) COMMENT '性别',
+                             register_time TIMESTAMP NOT NULL COMMENT '注册时间',
+                             user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
+                             insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
+                             update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+                             PRIMARY KEY pk_customerinfid(id)
+) ENGINE = innodb COMMENT '用户信息表';
+
+
+
+
+CREATE TABLE customer_login(
+                               id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '主键ID',
+                               uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                               login_name VARCHAR(20) NOT NULL COMMENT '用户登录名',
+                               password CHAR(32) NOT NULL COMMENT 'md5加密的密码',
+                               user_stats TINYINT NOT NULL DEFAULT 1 COMMENT '用户状态',
+                               insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
+                               update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+                               PRIMARY KEY pk_customerid(id)
+) ENGINE = innodb COMMENT '用户登录表';
+
+# 用户信息表
+CREATE TABLE customer_info(
+                              id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                              uid INT UNSIGNED NOT NULL COMMENT '用户ID',
+                              user_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
+                              identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
+                              identity_card_no VARCHAR(20) COMMENT '证件号码',
+                              phone VARCHAR(20)  COMMENT '手机号',
+                              email VARCHAR(50) COMMENT '邮箱',
+                              gender CHAR(1) COMMENT '性别',
+                              register_time TIMESTAMP NOT NULL COMMENT '注册时间',
+                              user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
+                              insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
+                              update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+                              PRIMARY KEY pk_customerinfid(id)
 ) ENGINE = innodb COMMENT '用户信息表';
 
 CREATE TABLE customer_address(
-                                 customer_addr_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
-                                 customer_id INT UNSIGNED NOT NULL COMMENT 'customer_login表的自增ID',
+                                 id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '自增主键ID',
+                                 uid INT UNSIGNED NOT NULL COMMENT 'customer_login表的自增ID',
                                  zip SMALLINT NOT NULL COMMENT '邮编',
                                  province VARCHAR(20) NOT NULL COMMENT '地区表中省份的ID',
                                  provinceName VARCHAR(20) NOT NULL COMMENT '地区表中省份的ID',
@@ -41,12 +112,12 @@ CREATE TABLE customer_address(
                                  is_default TINYINT NOT NULL COMMENT '是否默认',
                                  insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                                  update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                                 PRIMARY KEY pk_customeraddid(customer_addr_id)
+                                 PRIMARY KEY pk_customeraddid(id)
 ) ENGINE = innodb COMMENT '用户地址表';
 
 
 CREATE TABLE product_info(
-                             product_id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '商品ID',
+                             id INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '商品ID',
                              product_core CHAR(16) NOT NULL COMMENT '商品编码',
                              product_name VARCHAR(20) NOT NULL COMMENT '商品名称',
                              bar_code VARCHAR(50) NOT NULL COMMENT '国条码',
@@ -71,13 +142,13 @@ CREATE TABLE product_info(
                              in_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '商品录入时间',
                              insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                              update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                             PRIMARY KEY pk_productid(product_id)
+                             PRIMARY KEY pk_productid(id)
 ) ENGINE = innodb COMMENT '商品信息表';
 
 CREATE TABLE order(
-                      order_id INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '订单ID',
+                      id INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '订单ID',
                       order_sn BIGINT UNSIGNED NOT NULL COMMENT '订单编号 yyyymmddnnnnnnnn',
-                      customer_id INT UNSIGNED NOT NULL COMMENT '下单人ID',
+                      uid INT UNSIGNED NOT NULL COMMENT '下单人ID',
                       shipping_user VARCHAR(10) NOT NULL COMMENT '收货人姓名',
                       province SMALLINT NOT NULL COMMENT '省',
                       city SMALLINT NOT NULL COMMENT '市',
@@ -99,5 +170,5 @@ CREATE TABLE order(
                       invoice_time VARCHAR(100) COMMENT '发票抬头',
                       insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '创建时间',
                       update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-                      PRIMARY KEY pk_orderid(order_id)
+                      PRIMARY KEY pk_orderid(id)
 )ENGINE = innodb COMMENT '订单主表';
