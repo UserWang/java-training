@@ -7,7 +7,10 @@ package com.wjd.javacourse.week08.gateway;/**
 import com.wjd.javacourse.week08.bean.User;
 import com.wjd.javacourse.week08.repository.UserRepository;
 import com.wjd.javacourse.week08.repository.UserRepositoryImpl;
+import org.apache.shardingsphere.transaction.annotation.ShardingSphereTransactionType;
+import org.apache.shardingsphere.transaction.core.TransactionType;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -26,6 +29,8 @@ public class UserGatewayImpl implements UserGateway {
         userRepository = new UserRepositoryImpl(dataSource);
     }
 
+    @Transactional
+    @ShardingSphereTransactionType(TransactionType.XA)
     @Override
     public Long insert(User user) {
         return userRepository.insert(user);
